@@ -4,22 +4,18 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    category: 'Desarrollo Web',
-    image: 'https://images.unsplash.com/photo-1753998943228-73470750c597?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmdXR1cmlzdGljJTIwdGVjaG5vbG9neSUyMGRhcmslMjBjb2Rpbmd8ZW58MXx8fHwxNzczNjI4NzI1fDA&ixlib=rb-4.1.0&q=80&w=1080',
-    description: 'Plataforma de comercio electrónico con panel de administración',
+    title: 'Carpintería Nasca',
+    category: 'Landing Page',
+    image: '/projects/nasca.gif', // o .png
+    url: 'https://carpinterianasca.com.ar',
+    description: 'Landing para carpintería con enfoque en conversión',
   },
   {
-    title: 'Dashboard Analytics',
-    category: 'UI/UX Design',
-    image: 'https://images.unsplash.com/photo-1559028006-448665bd7c7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXNpZ24lMjBpbnRlcmZhY2UlMjBkYXJrfGVufDF8fHx8MTc3MzYyODcyNXww&ixlib=rb-4.1.0&q=80&w=1080',
-    description: 'Dashboard interactivo con visualización de datos en tiempo real',
-  },
-  {
-    title: 'Mobile App Design',
-    category: 'App Design',
-    image: 'https://images.unsplash.com/photo-1762279389045-110301edeecc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRpZ2l0YWwlMjBuZXR3b3JrfGVufDF8fHx8MTc3MzU5MTYwNHww&ixlib=rb-4.1.0&q=80&w=1080',
-    description: 'Aplicación móvil con diseño moderno y animaciones fluidas',
+    title: 'GM Electric',
+    category: 'Web Profesional',
+    image: '/projects/gm.gif',
+    url: 'https://gmelectric.com.ar',
+    description: 'Sitio para servicios eléctricos con SEO local',
   },
 ];
 
@@ -42,7 +38,7 @@ export function Portfolio() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -56,7 +52,7 @@ export function Portfolio() {
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75"
                 />
               </div>
 
