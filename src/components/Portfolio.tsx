@@ -6,14 +6,14 @@ const projects = [
   {
     title: 'Carpintería Nasca',
     category: 'Landing Page',
-    image: 'public/nasca.png',
+    image: 'https://bbwyaqxtumwceuecxqzy.supabase.co/storage/v1/object/sign/StefWeb/nasca.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZjgwYWMwZS03Mzg2LTQ1MTYtOTBjYS00M2FjNjRjZjhlM2YiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdGVmV2ViL25hc2NhLnBuZyIsImlhdCI6MTc3Mzc4Mzg4OCwiZXhwIjoyMDg5MTQzODg4fQ.gqbhuSPHk4ZpTF_JjfOqq1uS_wyMNwa6diyISiefzYE',
     url: 'https://carpinterianasca.com.ar',
     description: 'Landing para carpintería con enfoque en conversión',
   },
   {
     title: 'GM Electric',
     category: 'Web Profesional',
-    image: '/projects/gm.gif',
+    image: 'https://bbwyaqxtumwceuecxqzy.supabase.co/storage/v1/object/sign/StefWeb/gm.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZjgwYWMwZS03Mzg2LTQ1MTYtOTBjYS00M2FjNjRjZjhlM2YiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdGVmV2ViL2dtLnBuZyIsImlhdCI6MTc3Mzc4Mzk0NiwiZXhwIjoyMDg5MTQzOTQ2fQ.cdHV3ePofRZEfDCVZv1ar0aMEFiuyiX9qN98eAncDzY',
     url: 'https://gmelectric.com.ar',
     description: 'Sitio para servicios eléctricos con SEO local',
   },
