@@ -7,7 +7,7 @@ export function Hero() {
       {/* Animated background gradient */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-70"
           animate={{
             background: [
               'radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%)',
@@ -81,9 +81,9 @@ export function Hero() {
           transition={{ duration: 3, repeat: Infinity }}
         />
         <motion.div
-          className="absolute top-1/3 right-1/4 w-3 h-3 bg-purple-400 rounded-full"
+          className="absolute top-1 right-1/4 w-3 h-3 bg-purple-400 rounded-full"
           animate={{
-            y: [0, -30, 0],
+            y: [0, -50, 0],
             opacity: [0.3, 1, 0.3],
           }}
           transition={{ duration: 4, repeat: Infinity, delay: 1 }}

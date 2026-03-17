@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Code, Palette, Smartphone, Zap } from 'lucide-react';
+import { useState } from 'react';
 
 const services = [
   {
@@ -29,9 +30,12 @@ const services = [
 ];
 
 export function Services() {
+  const [rotations, setRotations] = useState<number[]>(services.map(() => 0));
+
   return (
     <section className="py-24 px-6 bg-gradient-to-b from-black to-gray-900">
       <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,25 +51,34 @@ export function Services() {
           </p>
         </motion.div>
 
+        {/* Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10 }}
+              onMouseEnter={() => {
+                setRotations((prev) => {
+                  const newRot = [...prev];
+                  newRot[index] += 360; // 🔥 rota acumulando
+                  return newRot;
+                });
+              }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" 
-                   style={{ background: `linear-gradient(to right, var(--tw-gradient-stops))` }} />
-              
-              <div className="relative bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
+              {/* Glow */}
+              <div
+                className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"
+                style={{ background: `linear-gradient(to right, var(--tw-gradient-stops))` }}
+              />
+
+              {/* Card */}
+              <div className="relative bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300 transform hover:-translate-y-2 hover:scale-[1.02]">
+                
+                {/* Icon */}
                 <motion.div
+                  animate={{ rotate: rotations[index] }}
+                  transition={{ duration: 0.6, ease: 'easeInOut' }}
                   className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6`}
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
                 >
                   <service.icon className="w-7 h-7 text-white" />
                 </motion.div>
@@ -83,7 +96,7 @@ export function Services() {
                   <div className={`absolute top-8 right-8 w-1 h-1 bg-gradient-to-br ${service.color} rounded-full`} />
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
