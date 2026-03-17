@@ -11,11 +11,11 @@ const projects = [
     description: 'Landing para carpintería con enfoque en conversión',
   },
   {
-    title: 'GM Electric',
+    title: 'GM Montajes Electromecanicos',
     category: 'Landing Page',
     image: 'https://bbwyaqxtumwceuecxqzy.supabase.co/storage/v1/object/sign/StefWeb/gm.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZjgwYWMwZS03Mzg2LTQ1MTYtOTBjYS00M2FjNjRjZjhlM2YiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdGVmV2ViL2dtLnBuZyIsImlhdCI6MTc3Mzc4Mzk0NiwiZXhwIjoyMDg5MTQzOTQ2fQ.cdHV3ePofRZEfDCVZv1ar0aMEFiuyiX9qN98eAncDzY',
     url: 'https://gmelectric.com.ar',
-    description: 'Sitio para servicios eléctricos con SEO local',
+    description: 'Sitio para servicios de electricidad con SEO local',
   },
 ];
 
@@ -62,18 +62,23 @@ export function Portfolio() {
                 initial={{ opacity: 0 }}
                 whileHover={{ opacity: 1 }}
               >
-                <span className="text-blue-400 text-sm font-semibold mb-2">
+                <span className="text-blue-400 text-sm font-semibold mb-0">
                   {project.category}
                 </span>
                 <h3 className="text-2xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 text-sm mb-4">
-                  {project.description}
-                </p>
-                <div className="flex items-center text-white">
-                  <a href={project.url} target="_blank"><span className="text-sm mr-2">Ver proyecto</span></a>
-                  <ExternalLink className="w-4 h-4" />
+                <div className="group/project flex items-center text-white">
+                  <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  <motion.button
+                    className=" text-white rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 group-hover/project:text-purple-400"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <ExternalLink className="group-has-[a] w-4 h-4 group-hover/project:rotate-12 transition-transform duration-300" />
+                    <span className="text-sm">Ver proyecto</span>
+                  </motion.button>
+                  </a>
                 </div>
               </motion.div>
 
