@@ -15,14 +15,14 @@ export function Hero() {
               'radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%)',
             ],
           }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />
       </div>
 
       {/* Grid pattern overlay */}
-      <div className="absolute inset-0 opacity-20" style={{
-        backgroundImage: `linear-gradient(rgba(120, 119, 198, 0.1) 1px, transparent 1px),
-                         linear-gradient(90deg, rgba(120, 119, 198, 0.1) 1px, transparent 1px)`,
+      <div className="absolute inset-0 opacity-30" style={{
+        backgroundImage: `linear-gradient(rgba(120, 119, 198, 0.2) 1px, transparent 1px),
+                         linear-gradient(90deg, rgba(120, 119, 198, 0.2) 1px, transparent 1px)`,
         backgroundSize: '50px 50px'
       }} />
 
@@ -60,12 +60,11 @@ export function Hero() {
           </motion.p>
 
           <motion.button
-            className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
+            className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-md hover:shadow-purple-500/100 transition-all"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1 }}
           >
             Ver Proyectos
           </motion.button>

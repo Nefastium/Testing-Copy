@@ -6,7 +6,7 @@ const projects = [
   {
     title: 'Carpintería Nasca',
     category: 'Landing Page',
-    image: '/projects/nasca.gif', // o .png
+    image: 'public/nasca.png',
     url: 'https://carpinterianasca.com.ar',
     description: 'Landing para carpintería con enfoque en conversión',
   },
@@ -40,6 +40,7 @@ export function Portfolio() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
+            <a href={project.url} target="_blank">
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -48,7 +49,7 @@ export function Portfolio() {
               viewport={{ once: true }}
               className="group relative overflow-hidden rounded-2xl cursor-pointer"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[16/9] overflow-hidden">
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
@@ -80,6 +81,7 @@ export function Portfolio() {
               {/* Glowing border effect */}
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-purple-500/50 rounded-2xl transition-all duration-300" />
             </motion.div>
+            </a>
           ))}
         </div>
       </div>
