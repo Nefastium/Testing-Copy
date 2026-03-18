@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, ChevronRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const projects = [
@@ -58,24 +58,33 @@ export function Portfolio() {
 
               {/* Overlay */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent transition-opacity duration-300 flex flex-col justify-end p-6"
+                className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent transition-opacity duration-300 flex flex-row items-end p-6 gap-4"
                 whileHover={{ opacity: 1 }}
               >
+                <motion.div className="w-10 h-10 flex items-center justify-center mb-2"
+                  initial={{ rotate: 0 }}
+                  whileTap={{ rotate: 540 }}
+                  transition={{ duration: 0.6, ease: 'easeInOut' }}
+                >
+                  <ChevronRight className="w-10 h-10 text-purple-400" />
+                </motion.div>
+                <div>
                 <span className="text-blue-400 text-sm font-semibold mb-0">
                   {project.category}
                 </span>
                 <h3 className="text-2xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
+                </div>
                 <div className="flex items-center text-white">
                   <a href={project.url} className="group/project" target="_blank" rel="noopener noreferrer">
                   <motion.button
-                    className=" text-white rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 group-hover/project:text-purple-400 lg:cursor-none"
+                    className=" text-white rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 group-hover/project:text-purple-400 lg:cursor-none absolute"
                     whileHover={{ scale: 1.25 }}
                     whileTap={{ scale: 1.15 }}
                   >
                     <ExternalLink className="group-has-[a] w-4 h-4 group-hover/project:rotate-12 transition-transform duration-300" />
-                    <span className="text-sm">Ver proyecto</span>
+                    <span className="text-sm ab">Ver proyecto</span>
                   </motion.button>
                   </a>
                 </div>
