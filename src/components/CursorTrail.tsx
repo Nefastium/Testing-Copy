@@ -60,7 +60,7 @@ export default function CursorTrail() {
           ref={(el) => {
             if (el) circlesRef.current[i] = el;
           }}
-          className="fixed top-0 left-0 w-5 h-5 rounded-full pointer-events-none z-[9999]"
+          className="opacity-0 lg:opacity-100 fixed top-0 left-0 w-5 h-5 rounded-full pointer-events-none z-[9999]"
         />
       ))}
     </>

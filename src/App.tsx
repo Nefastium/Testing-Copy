@@ -9,7 +9,7 @@ export default function App() {
   return (
     <>
     <CursorTrail />
-      <div className="min-h-screen bg-black text-white cursor-none">
+      <div className="min-h-screen bg-black text-white lg:cursor-none">
         <Hero />
         <Services />
         <Portfolio />

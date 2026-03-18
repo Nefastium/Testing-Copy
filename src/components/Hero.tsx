@@ -60,7 +60,7 @@ export function Hero() {
           </motion.p>
 
           <motion.button
-            className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-md hover:shadow-purple-500/100 transition-all cursor-none"
+            className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-md hover:shadow-purple-500/100 transition-all lg:cursor-none"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}

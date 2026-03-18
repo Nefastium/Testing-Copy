@@ -46,7 +46,7 @@ export function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group/text-project relative overflow-hidden rounded-2xl cursor-none"
+              className="group/text-project relative overflow-hidden rounded-2xl lg:cursor-none"
             >
               <div className="aspect-[16/9] overflow-hidden">
                 <ImageWithFallback
@@ -70,7 +70,7 @@ export function Portfolio() {
                 <div className="flex items-center text-white">
                   <a href={project.url} className="group/project" target="_blank" rel="noopener noreferrer">
                   <motion.button
-                    className=" text-white rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 group-hover/project:text-purple-400 cursor-none"
+                    className=" text-white rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 group-hover/project:text-purple-400 lg:cursor-none"
                     whileHover={{ scale: 1.25 }}
                     whileTap={{ scale: 1.15 }}
                   >
