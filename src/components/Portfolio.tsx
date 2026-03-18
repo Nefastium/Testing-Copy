@@ -46,20 +46,19 @@ export function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-2xl cursor-none"
+              className="group/text-project relative overflow-hidden rounded-2xl cursor-none"
             >
               <div className="aspect-[16/9] overflow-hidden">
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:brightness-75"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover/text-project:scale-105 group-hover/text-project:brightness-75"
                 />
               </div>
 
               {/* Overlay */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
-                initial={{ opacity: 0 }}
+                className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent transition-opacity duration-300 flex flex-col justify-end p-6"
                 whileHover={{ opacity: 1 }}
               >
                 <span className="text-blue-400 text-sm font-semibold mb-0">

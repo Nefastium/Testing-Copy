@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Github, Linkedin, Twitter, Instagram, Target } from 'lucide-react';
+import { Mail, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 
 const socialLinks = [
   { icon: Github, label: 'GitHub', href: 'https://github.com/Nefastium' },
