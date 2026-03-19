@@ -50,51 +50,51 @@ export function Contact() {
           className="bg-gray-800/50 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-gray-700"
         >
           <form className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 ">
               <div>
-                <label htmlFor="name" className="block text-gray-300 mb-2 text-sm">
+                <label htmlFor="name" className="block text-gray-300 mb-2 text-sm lg:cursor-none">
                   Nombre
                 </label>
                 <input
                   type="text"
                   id="name"
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors lg:cursor-none"
                   placeholder="Tu nombre"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-gray-300 mb-2 text-sm">
+                <label htmlFor="email" className="block text-gray-300 mb-2 text-sm lg:cursor-none">
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors lg:cursor-none"
                   placeholder="tu@email.com"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="subject" className="block text-gray-300 mb-2 text-sm">
+              <label htmlFor="subject" className="block text-gray-300 mb-2 text-sm lg:cursor-none">
                 Asunto
               </label>
               <input
                 type="text"
                 id="subject"
-                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors lg:cursor-none"
                 placeholder="¿En qué puedo ayudarte?"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-gray-300 mb-2 text-sm">
+              <label htmlFor="message" className="block text-gray-300 mb-2 text-sm lg:cursor-none">
                 Mensaje
               </label>
               <textarea
                 id="message"
                 rows={5}
-                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors resize-none"
+                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors resize-none lg:cursor-none"
                 placeholder="Cuéntame sobre tu proyecto..."
               />
             </div>
@@ -115,7 +115,7 @@ export function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0 }}
           viewport={{ once: true }}
           className="flex justify-center gap-6 mt-12"
         >
@@ -124,7 +124,7 @@ export function Contact() {
               key={index}
               href={social.href}
               target='_blank'
-              className="w-12 h-12 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:border-purple-500 transition-all duration-300 lg:cursor-none"
+              className="w-12 h-12 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:border-purple-500 lg:cursor-none"
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.95 }}
               aria-label={social.label}

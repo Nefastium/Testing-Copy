@@ -1,28 +1,29 @@
 import { motion } from 'motion/react';
-import { ExternalLink, ChevronRight } from 'lucide-react';
+import { ExternalLink, ChevronDown } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { useState } from 'react';
+import { AnimatePresence} from "framer-motion";
 
 const projects = [
   {
     title: 'Carpintería Nasca',
     category: 'Landing Page',
-    image: 'https://bbwyaqxtumwceuecxqzy.supabase.co/storage/v1/object/sign/StefWeb/nasca.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZjgwYWMwZS03Mzg2LTQ1MTYtOTBjYS00M2FjNjRjZjhlM2YiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdGVmV2ViL25hc2NhLnBuZyIsImlhdCI6MTc3Mzc4Mzg4OCwiZXhwIjoyMDg5MTQzODg4fQ.gqbhuSPHk4ZpTF_JjfOqq1uS_wyMNwa6diyISiefzYE',
+    image: 'https://bbwyaqxtumwceuecxqzy.supabase.co/storage/v1/object/sign/StefWeb/nasca%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZjgwYWMwZS03Mzg2LTQ1MTYtOTBjYS00M2FjNjRjZjhlM2YiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdGVmV2ViL25hc2NhICgxKS5wbmciLCJpYXQiOjE3NzM5NDU1MjYsImV4cCI6MjA4OTMwNTUyNn0.aunBCpAxWoNA7_h5ZnZCr7TVkU0W0Pk7xjDCWJPPINQ',
     url: 'https://carpinterianasca.com.ar',
     description: 'Landing para carpintería con enfoque en conversión',
   },
   {
     title: 'GM Montajes Electromecanicos',
     category: 'Landing Page',
-    image: 'https://bbwyaqxtumwceuecxqzy.supabase.co/storage/v1/object/sign/StefWeb/gm.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZjgwYWMwZS03Mzg2LTQ1MTYtOTBjYS00M2FjNjRjZjhlM2YiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdGVmV2ViL2dtLnBuZyIsImlhdCI6MTc3Mzc4Mzk0NiwiZXhwIjoyMDg5MTQzOTQ2fQ.cdHV3ePofRZEfDCVZv1ar0aMEFiuyiX9qN98eAncDzY',
+    image: 'https://bbwyaqxtumwceuecxqzy.supabase.co/storage/v1/object/sign/StefWeb/gm%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZjgwYWMwZS03Mzg2LTQ1MTYtOTBjYS00M2FjNjRjZjhlM2YiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdGVmV2ViL2dtICgxKS5wbmciLCJpYXQiOjE3NzM5NDU1NDMsImV4cCI6MjA4OTMwNTU0M30.z9xDKXsfOKcSXTEjM-Qjhyef9UZh7dUS4TpHG2GPUUY',
     url: 'https://gmelectric.com.ar',
     description: 'Sitio para servicios de electricidad con SEO local',
   },
 ];
 
 export function Portfolio() {
-  function ChevronArrow() {
-    alert('¡Gracias por tu interés! Este proyecto es una muestra de mi trabajo reciente. Si quieres ver más, no dudes en contactarme. ¡Estoy aquí para ayudarte a llevar tu presencia digital al siguiente nivel!');
-  }
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  
   return (
     <section className="py-24 px-6 bg-gray-900">
       <div className="max-w-6xl mx-auto">
@@ -43,48 +44,36 @@ export function Portfolio() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
+            <div key={index} className="flex flex-col">
             <motion.div
-              key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group/text-project relative overflow-hidden rounded-2xl lg:cursor-none"
+              className={`group/text-project relative overflow-hidden rounded-2xl lg:cursor-none ${openIndex === index ? 'rounded-b-none border-purple-400' : 'shadow-md'}`}
             >
               <div className="aspect-[16/9] overflow-hidden">
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover/text-project:scale-105 group-hover/text-project:brightness-75"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover/text-project:scale-105 group-hover/text-project:brightness-150"
                 />
               </div>
 
               {/* Overlay */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent transition-opacity duration-300 flex flex-row items-end p-6 gap-4"
+                className="absolute inset-0 bg-gradient-to-t from-gray-800 via-black/20 to-transparent transition-opacity duration-300 flex flex-row items-end p-2 gap-2"
                 whileHover={{ opacity: 1 }}
               >
                 <motion.div className="w-10 h-10 flex items-center justify-center mb-2"
-                  initial={{ rotate: 0 }}
-                  whileTap={{ rotate: 540 }}
-                  transition={{ duration: 0.6, ease: 'easeInOut' }}
+                  animate={{ rotate: openIndex === index ? 180 : 0 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
                 >
-                  <ChevronRight
-                  onClick={ChevronArrow}
-                  className="w-12 h-12 text-purple-400 hover:text-purple-600 transition-all duration-300 hover:scale-125" />
+                  <ChevronDown
+                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  className="w-8 h-8 text-purple-400 hover:text-purple-500 transition-all duration-300 hover:scale-125 border rounded-full p-1" />
                 </motion.div>
-                <div className="flex items-center text-white">
-                  <a href={project.url} className="group/project" target="_blank" rel="noopener noreferrer">
-                  <motion.button
-                    className=" text-white rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 group-hover/project:text-purple-400 lg:cursor-none absolute"
-                    whileHover={{ scale: 1.25 }}
-                    whileTap={{ scale: 1.15 }}
-                  >
-                    <ExternalLink className="group-has-[a] w-4 h-4 group-hover/project:rotate-12 transition-transform duration-300" />
-                    <span className="text-sm ab">Ver proyecto</span>
-                  </motion.button>
-                  </a>
-                </div>
+                
                 <div>
                 <span className="text-blue-400 text-sm font-semibold mb-0">
                   {project.category}
@@ -93,10 +82,38 @@ export function Portfolio() {
                   {project.title}
                 </h3>
                 </div>
-                
               </motion.div>
-
             </motion.div>
+            <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="bg-gray-800 px-6 py-4 rounded-b-2xl">
+                      <p className="text-gray-400 mb-3">{project.description}</p>
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="flex items-center gap-2 text-purple-400 font-semibold cursor-none"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          Ver proyecto
+                        </motion.button>
+                      </a>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           ))}
         </div>
       </div>
