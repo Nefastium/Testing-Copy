@@ -62,8 +62,8 @@ export function Contact() {
                   type="text"
                   id="name"
                   className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors lg:cursor-none"
-                  placeholder={t('contact.namePlaceholder')}
                 />
+                <p className="px-4 text-gray-500">{t('contact.namePlaceholder')}</p>
               </div>
               <div>
                 <label htmlFor="email" className="block text-gray-300 mb-2 text-sm lg:cursor-none">
@@ -73,8 +73,8 @@ export function Contact() {
                   type="email"
                   id="email"
                   className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors lg:cursor-none"
-                  placeholder={t('contact.emailPlaceholder')}
                 />
+                <p className="px-4 text-gray-500">{t('contact.emailPlaceholder')}</p>
               </div>
             </div>
 
@@ -86,8 +86,8 @@ export function Contact() {
                 type="text"
                 id="subject"
                 className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors lg:cursor-none"
-                placeholder={t('contact.subjectPlaceholder')}
               />
+              <p className="px-4 text-gray-500">{t('contact.subjectPlaceholder')}</p>
             </div>
 
             <div>
@@ -98,8 +98,8 @@ export function Contact() {
                 id="message"
                 rows={5}
                 className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors resize-none lg:cursor-none"
-                placeholder={t('contact.messagePlaceholder')}
               />
+              <p className="px-4 text-gray-500">{t('contact.messagePlaceholder')}</p>
             </div>
 
             <motion.button
