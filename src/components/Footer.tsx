@@ -1,6 +1,9 @@
 import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 export function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="py-8 px-6 bg-black border-t border-gray-800">
       <div className="max-w-6xl mx-auto">
@@ -12,10 +15,10 @@ export function Footer() {
           className="text-center"
         >
           <p className="text-gray-400">
-            © 2026 Stefano Marinkovich. Todos los derechos reservados.
+            {t('footer.copyright')}
           </p>
           <p className="text-gray-500 text-sm mt-2">
-            Diseñado y desarrollado con pasión
+            {t('footer.tagline')}
           </p>
         </motion.div>
       </div>

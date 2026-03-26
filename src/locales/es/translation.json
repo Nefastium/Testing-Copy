@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "title": "Web Designer & Developer",
+    "description": "Creando experiencias web innovadoras con diseño moderno y tecnología de vanguardia",
+    "ctaButton": "Ver Proyectos"
+  },
+  "services": {
+    "title": "Servicios",
+    "subtitle": "Soluciones completas para tu presencia digital",
+    "webDevelopment": {
+      "title": "Desarrollo Web",
+      "description": "Sitios web y aplicaciones personalizadas con las últimas tecnologías y frameworks modernos"
+    },
+    "uiuxDesign": {
+      "title": "Diseño UI/UX",
+      "description": "Interfaces intuitivas y atractivas que mejoran la experiencia del usuario"
+    },
+    "responsiveDesign": {
+      "title": "Diseño Responsivo",
+      "description": "Diseños adaptativos que funcionan perfectamente en todos los dispositivos"
+    },
+    "optimization": {
+      "title": "Optimización",
+      "description": "Performance y SEO optimizado para maximizar el rendimiento de tu sitio"
+    }
+  },
+  "portfolio": {
+    "title": "Proyectos",
+    "subtitle": "Algunos de mis trabajos recientes",
+    "viewProject": "Ver proyecto"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes un proyecto en mente? Hablemos",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "email": "Email",
+    "emailPlaceholder": "tu@email.com",
+    "subject": "Asunto",
+    "subjectPlaceholder": "¿En qué puedo ayudarte?",
+    "message": "Mensaje",
+    "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+    "sendButton": "Enviar Mensaje"
+  },
+  "footer": {
+    "copyright": "© 2026 Stefano Marinkovich. Todos los derechos reservados.",
+    "tagline": "Diseñado y desarrollado con pasión"
+  },
+  "language": {
+    "english": "Inglés",
+    "spanish": "Españ"
+  }
+}

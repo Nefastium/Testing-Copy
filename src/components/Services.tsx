@@ -1,36 +1,38 @@
 import { motion } from 'motion/react';
 import { Code, Palette, Smartphone, Zap } from 'lucide-react';
 import { useState } from 'react';
-
-const services = [
-  {
-    icon: Code,
-    title: 'Desarrollo Web',
-    description: 'Sitios web y aplicaciones personalizadas con las últimas tecnologías y frameworks modernos.',
-    color: 'from-blue-500 to-cyan-500',
-  },
-  {
-    icon: Palette,
-    title: 'Diseño UI/UX',
-    description: 'Interfaces intuitivas y atractivas que mejoran la experiencia del usuario.',
-    color: 'from-purple-500 to-pink-500',
-  },
-  {
-    icon: Smartphone,
-    title: 'Responsive Design',
-    description: 'Diseños adaptativos que funcionan perfectamente en todos los dispositivos.',
-    color: 'from-green-500 to-emerald-500',
-  },
-  {
-    icon: Zap,
-    title: 'Optimización',
-    description: 'Performance y SEO optimizado para maximizar el rendimiento de tu sitio.',
-    color: 'from-orange-500 to-yellow-500',
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 export function Services() {
-  const [rotations, setRotations] = useState<number[]>(services.map(() => 0));
+  const { t } = useTranslation();
+  const [rotations, setRotations] = useState<number[]>([0, 0, 0, 0]);
+
+  const services = [
+    {
+      icon: Code,
+      title: t('services.webDevelopment.title'),
+      description: t('services.webDevelopment.description'),
+      color: 'from-blue-500 to-cyan-500',
+    },
+    {
+      icon: Palette,
+      title: t('services.uiuxDesign.title'),
+      description: t('services.uiuxDesign.description'),
+      color: 'from-purple-500 to-pink-500',
+    },
+    {
+      icon: Smartphone,
+      title: t('services.responsiveDesign.title'),
+      description: t('services.responsiveDesign.description'),
+      color: 'from-green-500 to-emerald-500',
+    },
+    {
+      icon: Zap,
+      title: t('services.optimization.title'),
+      description: t('services.optimization.description'),
+      color: 'from-orange-500 to-yellow-500',
+    },
+  ];
 
   return (
     <section className="py-24 px-6 bg-gradient-to-b from-black to-gray-900">
@@ -44,10 +46,10 @@ export function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-            Servicios
+            {t('services.title')}
           </h2>
           <p className="text-gray-400 text-lg">
-            Soluciones completas para tu presencia digital
+            {t('services.subtitle')}
           </p>
         </motion.div>
 
@@ -59,7 +61,7 @@ export function Services() {
               onMouseEnter={() => {
                 setRotations((prev) => {
                   const newRot = [...prev];
-                  newRot[index] += 360; // 🔥 rota acumulando
+                  newRot[index] += 360;
                   return newRot;
                 });
               }}
@@ -73,7 +75,7 @@ export function Services() {
 
               {/* Card */}
               <div className="relative bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300 transform hover:-translate-y-2 hover:scale-[1.02]">
-                
+
                 {/* Icon */}
                 <motion.div
                   animate={{ rotate: rotations[index] }}

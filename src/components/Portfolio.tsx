@@ -3,6 +3,7 @@ import { ExternalLink, ChevronDown } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState } from 'react';
 import { AnimatePresence} from "framer-motion";
+import { useTranslation } from 'react-i18next';
 
 const projects = [
   {
@@ -22,10 +23,11 @@ const projects = [
 ];
 
 export function Portfolio() {
+  const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  
+
   return (
-    <section className="py-24 px-6 bg-gray-900">
+    <section id="portfolio" className="py-24 px-6 bg-gray-900">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,10 +37,10 @@ export function Portfolio() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
-            Proyectos
+            {t('portfolio.title')}
           </h2>
           <p className="text-gray-400 text-lg">
-            Algunos de mis trabajos recientes.
+            {t('portfolio.subtitle')}
           </p>
         </motion.div>
 
@@ -73,7 +75,7 @@ export function Portfolio() {
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="w-8 h-8 text-purple-400 hover:text-purple-500 transition-all duration-300 hover:scale-125 border rounded-full p-1" />
                 </motion.div>
-                
+
                 <div>
                 <span className="text-blue-400 text-sm font-semibold mb-0">
                   {project.category}
@@ -106,7 +108,7 @@ export function Portfolio() {
                           className="flex items-center gap-2 text-purple-400 font-semibold cursor-none"
                         >
                           <ExternalLink className="w-4 h-4" />
-                          Ver proyecto
+                          {t('portfolio.viewProject')}
                         </motion.button>
                       </a>
                     </div>

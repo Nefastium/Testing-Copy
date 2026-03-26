@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Mail, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const socialLinks = [
   { icon: Github, label: 'GitHub', href: 'https://github.com/Nefastium' },
@@ -10,6 +11,8 @@ const socialLinks = [
 ];
 
 export function Contact() {
+  const { t } = useTranslation();
+
   return (
     <section className="py-24 px-6 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
       {/* Animated background */}
@@ -35,10 +38,10 @@ export function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-            Contacto
+            {t('contact.title')}
           </h2>
           <p className="text-gray-400 text-lg">
-            ¿Tienes un proyecto en mente? Hablemos
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -53,49 +56,49 @@ export function Contact() {
             <div className="grid md:grid-cols-2 gap-6 ">
               <div>
                 <label htmlFor="name" className="block text-gray-300 mb-2 text-sm lg:cursor-none">
-                  Nombre
+                  {t('contact.name')}
                 </label>
                 <input
                   type="text"
                   id="name"
                   className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors lg:cursor-none"
-                  placeholder="Tu nombre"
+                  placeholder={t('contact.namePlaceholder')}
                 />
               </div>
               <div>
                 <label htmlFor="email" className="block text-gray-300 mb-2 text-sm lg:cursor-none">
-                  Email
+                  {t('contact.email')}
                 </label>
                 <input
                   type="email"
                   id="email"
                   className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors lg:cursor-none"
-                  placeholder="tu@email.com"
+                  placeholder={t('contact.emailPlaceholder')}
                 />
               </div>
             </div>
 
             <div>
               <label htmlFor="subject" className="block text-gray-300 mb-2 text-sm lg:cursor-none">
-                Asunto
+                {t('contact.subject')}
               </label>
               <input
                 type="text"
                 id="subject"
                 className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors lg:cursor-none"
-                placeholder="¿En qué puedo ayudarte?"
+                placeholder={t('contact.subjectPlaceholder')}
               />
             </div>
 
             <div>
               <label htmlFor="message" className="block text-gray-300 mb-2 text-sm lg:cursor-none">
-                Mensaje
+                {t('contact.message')}
               </label>
               <textarea
                 id="message"
                 rows={5}
                 className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors resize-none lg:cursor-none"
-                placeholder="Cuéntame sobre tu proyecto..."
+                placeholder={t('contact.messagePlaceholder')}
               />
             </div>
 
@@ -106,7 +109,7 @@ export function Contact() {
               whileTap={{ scale: 0.98 }}
             >
               <Mail className="w-5 h-5" />
-              Enviar Mensaje
+              {t('contact.sendButton')}
             </motion.button>
           </form>
         </motion.div>

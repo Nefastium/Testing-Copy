@@ -1,11 +1,23 @@
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export function Hero() {
+  const { t } = useTranslation();
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
       {/* Animated background gradient */}
       <div className="absolute inset-0">
+        <div className="absolute top-4 right-4 z-20 cursor-none">
+          <LanguageSwitcher />
+        </div>
         <motion.div
           className="absolute inset-0 opacity-70"
           animate={{
@@ -47,7 +59,7 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Web Designer & Developer
+            {t('hero.title')}
           </motion.p>
 
           <motion.p
@@ -56,17 +68,18 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Creando experiencias web innovadoras con diseño moderno y tecnología de vanguardia
+            {t('hero.description')}
           </motion.p>
 
           <motion.button
+            onClick={() => scrollToSection("portfolio")}
             className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-md hover:shadow-purple-500/100 lg:cursor-none"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 1 }}
           >
-            Ver Proyectos
+            {t('hero.ctaButton')}
           </motion.button>
         </motion.div>
 
